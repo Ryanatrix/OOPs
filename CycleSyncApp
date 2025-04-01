@@ -30,17 +30,57 @@ class DietPlan extends AbstractDietPlan implements DietRecommendation {
         
         if (preference.equalsIgnoreCase("Vegetarian")) {
             switch (phase) {
-                case "Menstrual Phase": foods.addAll(Arrays.asList("spinach", "lentils", "almonds", "tofu", "warm soups")); break;
-                case "Follicular Phase": foods.addAll(Arrays.asList("protein-rich foods", "nuts", "yogurt", "avocados")); break;
-                case "Ovulation Phase": foods.addAll(Arrays.asList("leafy greens", "berries", "seeds", "whole grains")); break;
-                case "Luteal Phase": foods.addAll(Arrays.asList("bananas", "dark chocolate", "chickpeas")); break;
+                case "Menstrual Phase": 
+                    foods.addAll(Arrays.asList("spinach", "lentils", "almonds", "tofu", "warm soups"));
+                    if (painLevel > 5) foods.add("turmeric tea");
+                    if (hungerLevel > 5) foods.add("quinoa");
+                    if (exhaustionLevel > 5) foods.add("oatmeal");
+                    break;
+                case "Follicular Phase": 
+                    foods.addAll(Arrays.asList("protein-rich foods", "nuts", "yogurt", "avocados"));
+                    if (painLevel > 5) foods.add("ginger tea");
+                    if (hungerLevel > 5) foods.add("hummus");
+                    if (exhaustionLevel > 5) foods.add("smoothies");
+                    break;
+                case "Ovulation Phase": 
+                    foods.addAll(Arrays.asList("leafy greens", "berries", "seeds", "whole grains"));
+                    if (painLevel > 5) foods.add("green tea");
+                    if (hungerLevel > 5) foods.add("chia pudding");
+                    if (exhaustionLevel > 5) foods.add("energy bars");
+                    break;
+                case "Luteal Phase": 
+                    foods.addAll(Arrays.asList("bananas", "dark chocolate", "chickpeas"));
+                    if (painLevel > 5) foods.add("peppermint tea");
+                    if (hungerLevel > 5) foods.add("sweet potatoes");
+                    if (exhaustionLevel > 5) foods.add("walnuts");
+                    break;
             }
         } else {
             switch (phase) {
-                case "Menstrual Phase": foods.addAll(Arrays.asList("red meat", "eggs", "chicken", "bone broth")); break;
-                case "Follicular Phase": foods.addAll(Arrays.asList("lean meats", "fish", "eggs", "dairy")); break;
-                case "Ovulation Phase": foods.addAll(Arrays.asList("salmon", "tuna", "nuts", "lean protein")); break;
-                case "Luteal Phase": foods.addAll(Arrays.asList("turkey", "chicken", "whole grains")); break;
+                case "Menstrual Phase": 
+                    foods.addAll(Arrays.asList("red meat", "eggs", "chicken", "bone broth"));
+                    if (painLevel > 5) foods.add("turmeric tea");
+                    if (hungerLevel > 5) foods.add("quinoa");
+                    if (exhaustionLevel > 5) foods.add("oatmeal");
+                    break;
+                case "Follicular Phase": 
+                    foods.addAll(Arrays.asList("lean meats", "fish", "eggs", "dairy"));
+                    if (painLevel > 5) foods.add("ginger tea");
+                    if (hungerLevel > 5) foods.add("hummus");
+                    if (exhaustionLevel > 5) foods.add("smoothies");
+                    break;
+                case "Ovulation Phase": 
+                    foods.addAll(Arrays.asList("salmon", "tuna", "nuts", "lean protein"));
+                    if (painLevel > 5) foods.add("green tea");
+                    if (hungerLevel > 5) foods.add("chia pudding");
+                    if (exhaustionLevel > 5) foods.add("energy bars");
+                    break;
+                case "Luteal Phase": 
+                    foods.addAll(Arrays.asList("turkey", "chicken", "whole grains"));
+                    if (painLevel > 5) foods.add("peppermint tea");
+                    if (hungerLevel > 5) foods.add("sweet potatoes");
+                    if (exhaustionLevel > 5) foods.add("walnuts");
+                    break;
             }
         }
         foods.removeAll(allergies);
@@ -49,18 +89,21 @@ class DietPlan extends AbstractDietPlan implements DietRecommendation {
     }
 }
 
-public class CycleSyncApp extends JFrame implements ActionListener {
+public class CycleSyncApplet extends JApplet implements ActionListener {
     private JTextField nameField, dateField, cycleField, painField, hungerField, exhaustionField;
     private JComboBox<String> dietChoice;
-    private JTextArea symptomsField, allergiesField, dislikesField, resultArea;
+    private JTextArea resultArea;
     private JButton submitButton, clearButton;
     private DietPlan dietPlan;
     
-    public CycleSyncApp() {
-        setTitle("Menstrual Diet Recommendation");
+    private JCheckBox[] symptomCheckboxes;
+    private JCheckBox[] allergyCheckboxes;
+    private JCheckBox[] dislikeCheckboxes;
+
+    @Override
+    public void init() {
         setSize(500, 600);
         setLayout(new GridLayout(14, 2));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         dietPlan = new DietPlan();
         
@@ -92,17 +135,38 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         exhaustionField = new JTextField();
         add(exhaustionField);
         
-        add(new JLabel("Symptoms (comma-separated):"));
-        symptomsField = new JTextArea();
-        add(symptomsField);
+        add(new JLabel("Symptoms:"));
+        JPanel symptomsPanel = new JPanel();
+        symptomsPanel.setLayout(new GridLayout(5, 1));
+        String[] symptoms = {"Cramps", "Headache", "Bloating", "Mood Swings", "Fatigue"};
+        symptomCheckboxes = new JCheckBox[symptoms.length];
+        for (int i = 0; i < symptoms.length; i++) {
+            symptomCheckboxes[i] = new JCheckBox(symptoms[i]);
+            symptomsPanel.add(symptomCheckboxes[i]);
+        }
+        add(symptomsPanel);
         
-        add(new JLabel("Allergies (comma-separated):"));
-        allergiesField = new JTextArea();
-        add(allergiesField);
+        add(new JLabel("Allergies:"));
+        JPanel allergiesPanel = new JPanel();
+        allergiesPanel.setLayout(new GridLayout(5, 1));
+        String[] allergies = {"Nuts", "Dairy", "Gluten", "Soy", "Seafood"};
+        allergyCheckboxes = new JCheckBox[allergies.length];
+        for (int i = 0; i < allergies.length; i++) {
+            allergyCheckboxes[i] = new JCheckBox(allergies[i]);
+            allergiesPanel.add(allergyCheckboxes[i]);
+        }
+        add(allergiesPanel);
         
-        add(new JLabel("Disliked Foods (comma-separated):"));
-        dislikesField = new JTextArea();
-        add(dislikesField);
+        add(new JLabel("Disliked Foods:"));
+        JPanel dislikesPanel = new JPanel();
+        dislikesPanel.setLayout(new GridLayout(5, 1));
+        String[] dislikes = {"Broccoli", "Brussels Sprouts", "Eggplant", "Mushrooms", "Spinach"};
+        dislikeCheckboxes = new JCheckBox[dislikes.length];
+        for (int i = 0; i < dislikes.length; i++) {
+            dislikeCheckboxes[i] = new JCheckBox(dislikes[i]);
+            dislikesPanel.add(dislikeCheckboxes[i]);
+        }
+        add(dislikesPanel);
         
         submitButton = new JButton("Get Recommendations");
         submitButton.addActionListener(this);
@@ -116,8 +180,6 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         resultArea.setEditable(false);
         add(new JLabel("Recommendations:"));
         add(new JScrollPane(resultArea));
-        
-        setVisible(true);
     }
     
     @Override
@@ -129,11 +191,30 @@ public class CycleSyncApp extends JFrame implements ActionListener {
             int painLevel = Integer.parseInt(painField.getText());
             int hungerLevel = Integer.parseInt(hungerField.getText());
             int exhaustionLevel = Integer.parseInt(exhaustionField.getText());
-            Set<String> allergies = new HashSet<>(Arrays.asList(allergiesField.getText().split(",")));
-            Set<String> dislikes = new HashSet<>(Arrays.asList(dislikesField.getText().split(",")));
+            
+            Set<String> selectedSymptoms = new HashSet<>();
+            for (JCheckBox checkbox : symptomCheckboxes) {
+                if (checkbox.isSelected()) {
+                    selectedSymptoms.add(checkbox.getText());
+                }
+            }
+            
+            Set<String> selectedAllergies = new HashSet<>();
+            for (JCheckBox checkbox : allergyCheckboxes) {
+                if (checkbox.isSelected()) {
+                    selectedAllergies.add(checkbox.getText());
+                }
+            }
+            
+            Set<String> selectedDislikes = new HashSet<>();
+            for (JCheckBox checkbox : dislikeCheckboxes) {
+                if (checkbox.isSelected()) {
+                    selectedDislikes.add(checkbox.getText());
+                }
+            }
             
             int cycleDay = (int) ChronoUnit.DAYS.between(lastPeriod, LocalDate.now()) % cycleLength + 1;
-            String recommendation = dietPlan.suggestDiet(cycleDay, dietPreference, painLevel, hungerLevel, exhaustionLevel, allergies, dislikes);
+            String recommendation = dietPlan.suggestDiet(cycleDay, dietPreference, painLevel, hungerLevel, exhaustionLevel, selectedAllergies, selectedDislikes);
             resultArea.setText(recommendation);
         } else if (e.getSource() == clearButton) {
             nameField.setText("");
@@ -142,14 +223,27 @@ public class CycleSyncApp extends JFrame implements ActionListener {
             painField.setText("");
             hungerField.setText("");
             exhaustionField.setText("");
-            symptomsField.setText("");
-            allergiesField.setText("");
-            dislikesField.setText("");
+            for (JCheckBox checkbox : symptomCheckboxes) {
+                checkbox.setSelected(false);
+            }
+            for (JCheckBox checkbox : allergyCheckboxes) {
+                checkbox.setSelected(false);
+            }
+            for (JCheckBox checkbox : dislikeCheckboxes) {
+                checkbox.setSelected(false);
+            }
             resultArea.setText("");
         }
     }
     
     public static void main(String[] args) {
-        new CycleSyncApp();
+        JFrame frame = new JFrame("Menstrual Diet Recommendation");
+        CycleSyncApplet applet = new CycleSyncApplet();
+        frame.add(applet);
+        frame.setSize(500, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        applet.init();
+        applet.start();
+        frame.setVisible(true);
     }
-}
+}   
