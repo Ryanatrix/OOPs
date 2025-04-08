@@ -6,7 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.List;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
 abstract class AbstractDietPlan {
     public abstract String suggestDiet(int cycleDay, String preference, int painLevel, int hungerLevel, int exhaustionLevel, Set<String> allergies, Set<String> dislikes);
@@ -150,9 +154,17 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         resultArea.setEditable(false);
         resultArea.setBorder(BorderFactory.createTitledBorder("Recommendations"));
 
-        add(inputPanel, BorderLayout.NORTH);
-        add(buttonPanel, BorderLayout.CENTER);
-        add(new JScrollPane(resultArea), BorderLayout.SOUTH);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+        mainPanel.add(inputPanel, BorderLayout.NORTH);
+        mainPanel.add(buttonPanel, BorderLayout.CENTER);
+        mainPanel.add(new JScrollPane(resultArea), BorderLayout.SOUTH);
+
+        JScrollPane scrollPane = new JScrollPane(mainPanel);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        add(scrollPane, BorderLayout.CENTER);
     }
 
     private JTextField createTextField(JPanel panel, String label) {
@@ -201,16 +213,16 @@ public class CycleSyncApp extends JFrame implements ActionListener {
     private String getRecommendations() {
         LocalDate lastPeriod = LocalDate.parse(dateField.getText());
         int cycleLength = Integer.parseInt(cycleField.getText());
-        String dietPreference = (String) dietChoice.getSelectedItem();
+        Set<String> selectedAllergies = getSelectedCheckboxes(allergyCheckboxes);
         int painLevel = Integer.parseInt(painField.getText());
         int hungerLevel = Integer.parseInt(hungerField.getText());
         int exhaustionLevel = Integer.parseInt(exhaustionField.getText());
 
         Set<String> selectedSymptoms = getSelectedCheckboxes(symptomCheckboxes);
-        Set<String> selectedAllergies = getSelectedCheckboxes(allergyCheckboxes);
         Set<String> selectedDislikes = getSelectedCheckboxes(dislikeCheckboxes);
 
         int cycleDay = (int) ChronoUnit.DAYS.between(lastPeriod, LocalDate.now()) % cycleLength + 1;
+        String dietPreference = (String) dietChoice.getSelectedItem();
         return dietPlan.suggestDiet(cycleDay, dietPreference, painLevel, hungerLevel, exhaustionLevel, selectedAllergies, selectedDislikes);
     }
 
