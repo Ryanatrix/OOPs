@@ -1,31 +1,31 @@
 PainLevel,HungerLevel,ExhaustionLevel,Food
-1,,,vegetarian_food_for_pain_level_1
-2,,,vegetarian_food_for_pain_level_2
-3,,,vegetarian_food_for_pain_level_3
-4,,,vegetarian_food_for_pain_level_4
-5,,,vegetarian_food_for_pain_level_5
-6,,,vegetarian_food_for_pain_level_6
-7,,,vegetarian_food_for_pain_level_7
-8,,,vegetarian_food_for_pain_level_8
-9,,,vegetarian_food_for_pain_level_9
-10,,,vegetarian_food_for_pain_level_10
-,1,,vegetarian_food_for_hunger_level_1
-,2,,vegetarian_food_for_hunger_level_2
-,3,,vegetarian_food_for_hunger_level_3
-,4,,vegetarian_food_for_hunger_level_4
-,5,,vegetarian_food_for_hunger_level_5
-,6,,vegetarian_food_for_hunger_level_6
-,7,,vegetarian_food_for_hunger_level_7
-,8,,vegetarian_food_for_hunger_level_8
-,9,,vegetarian_food_for_hunger_level_9
-,10,,vegetarian_food_for_hunger_level_10
-,,1,vegetarian_food_for_exhaustion_level_1
-,,2,vegetarian_food_for_exhaustion_level_2
-,,3,vegetarian_food_for_exhaustion_level_3
-,,4,vegetarian_food_for_exhaustion_level_4
-,,5,vegetarian_food_for_exhaustion_level_5
-,,6,vegetarian_food_for_exhaustion_level_6
-,,7,vegetarian_food_for_exhaustion_level_7
-,,8,vegetarian_food_for_exhaustion_level_8
-,,9,vegetarian_food_for_exhaustion_level_9
-,,10,vegetarian_food_for_exhaustion_level_10
+1,,,Masoor dal with rice and sautéed spinach
+2,,,Palak paneer with multigrain roti
+3,,,Vegetable soup with whole grain toast
+4,,,Tofu stir fry with brown rice
+5,,,Rajma chawal with cucumber salad
+6,,,Chickpea curry with millets
+7,,,Quinoa pulao with mixed vegetables
+8,,,Methi thepla with curd
+9,,,Khichdi with ghee and steamed carrots
+10,,,Stuffed paratha with boiled sweet potatoes
+,1,,Banana with peanut butter
+,2,,Oats porridge with almonds
+,3,,Fruit chaat with hung curd
+,4,,Vegetable upma with cashews
+,5,,Besan chilla with tomato chutney
+,6,,Sprouted moong salad
+,7,,Makhana roasted with spices
+,8,,Paneer sandwich on whole wheat bread
+,9,,Vegetable poha with peanuts
+,10,,Ragi malt with jaggery
+,,1,Lemon water with soaked almonds
+,,2,Smoothie with spinach, banana, and flaxseed
+,,3,Moong dal soup
+,,4,Besan halwa with raisins
+,,5,Vegetable stew with whole wheat bread
+,,6,Tofu curry with steamed rice
+,,7,Boiled corn with lime and masala
+,,8,Barley khichdi with ghee
+,,9,Bajra roti with brinjal curry
+,,10,Stuffed capsicum with paneer and rice
