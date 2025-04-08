@@ -90,6 +90,10 @@ class DietPlan extends AbstractDietPlan implements DietRecommendation {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
+                if (values.length < 4) {
+                    continue; // Skip lines with insufficient data
+                }
+
                 boolean addFood = false;
 
                 if (!values[0].isEmpty() && painLevel == Integer.parseInt(values[0])) {
@@ -218,7 +222,7 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         int hungerLevel = Integer.parseInt(hungerField.getText());
         int exhaustionLevel = Integer.parseInt(exhaustionField.getText());
 
-        Set<String> selectedSymptoms = getSelectedCheckboxes(symptomCheckboxes);
+        // Removed unused variable 'selectedSymptoms'
         Set<String> selectedDislikes = getSelectedCheckboxes(dislikeCheckboxes);
 
         int cycleDay = (int) ChronoUnit.DAYS.between(lastPeriod, LocalDate.now()) % cycleLength + 1;
