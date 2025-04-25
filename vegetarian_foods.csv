@@ -1,31 +1,31 @@
 PainLevel,HungerLevel,ExhaustionLevel,Food
-1,,,Masoor dal with rice and sautéed spinach
-2,,,Palak paneer with multigrain roti
-3,,,Vegetable soup with whole grain toast
-4,,,Tofu stir fry with brown rice
-5,,,Rajma chawal with cucumber salad
-6,,,Chickpea curry with millets
-7,,,Quinoa pulao with mixed vegetables
-8,,,Methi thepla with curd
-9,,,Khichdi with ghee and steamed carrots
-10,,,Stuffed paratha with boiled sweet potatoes
-,1,,Banana with peanut butter
-,2,,Oats porridge with almonds
-,3,,Fruit chaat with hung curd
-,4,,Vegetable upma with cashews
-,5,,Besan chilla with tomato chutney
-,6,,Sprouted moong salad
-,7,,Makhana roasted with spices
-,8,,Paneer sandwich on whole wheat bread
-,9,,Vegetable poha with peanuts
-,10,,Ragi malt with jaggery
-,,1,Lemon water with soaked almonds
-,,2,Smoothie with spinach, banana, and flaxseed
-,,3,Moong dal soup
-,,4,Besan halwa with raisins
-,,5,Vegetable stew with whole wheat bread
-,,6,Tofu curry with steamed rice
-,,7,Boiled corn with lime and masala
-,,8,Barley khichdi with ghee
-,,9,Bajra roti with brinjal curry
-,,10,Stuffed capsicum with paneer and rice
+1,,,masoor dal with rice and sautéed spinach
+2,,,palak paneer with multigrain roti
+3,,,vegetable soup with whole grain toast
+4,,,tofu stir fry with brown rice
+5,,,rajma chawal with cucumber salad
+6,,,chickpea curry with millets
+7,,,quinoa pulao with mixed vegetables
+8,,,methi thepla with curd
+9,,,khichdi with ghee and steamed carrots
+10,,,stuffed paratha with boiled sweet potatoes
+,1,,banana with peanut butter
+,2,,oats porridge with almonds
+,3,,fruit chaat with hung curd
+,4,,vegetable upma with cashews
+,5,,besan chilla with tomato chutney
+,6,,sprouted moong salad
+,7,,makhana roasted with spices
+,8,,paneer sandwich on whole wheat bread
+,9,,vegetable poha with peanuts
+,10,,ragi malt with jaggery
+,,1,lemon water with soaked almonds
+,,2,smoothie with spinach, banana, and flaxseed
+,,3,moong dal soup
+,,4,besan halwa with raisins
+,,5,vegetable stew with whole wheat bread
+,,6,tofu curry with steamed rice
+,,7,boiled corn with lime and masala
+,,8,barley khichdi with ghee
+,,9,bajra roti with brinjal curry
+,,10,stuffed capsicum with paneer and rice
