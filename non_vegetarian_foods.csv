@@ -1,31 +1,31 @@
 PainLevel,HungerLevel,ExhaustionLevel,Food
-1,,,Grilled salmon with spinach
-2,,,Boiled eggs with brown rice
-3,,,Chicken soup with carrots
-4,,,Turkey sandwich on whole grain bread
-5,,,Beef stew with sweet potatoes
-6,,,Grilled chicken with quinoa and kale
-7,,,Baked fish with lentils
-8,,,Omelet with mushrooms and whole wheat toast
-9,,,Lamb curry with basmati rice
-10,,,Tuna steak with steamed broccoli
-,1,,Boiled egg with fruit
-,2,,Yogurt with chicken slices
-,3,,Shrimp salad with olive oil dressing
-,4,,Grilled chicken wrap
-,5,,Sardine sandwich
-,6,,Egg sandwich on whole grain bread
-,7,,Fish tacos with salsa
-,8,,Chicken biryani (light)
-,9,,Beef stir fry with veggies
-,10,,Mutton soup with rice
-,,1,Chicken broth with ginger
-,,2,Scrambled eggs with avocado
-,,3,Fish curry with rice
-,,4,Tuna salad with walnuts
-,,5,Grilled chicken with roasted vegetables
-,,6,Chicken liver with spinach
-,,7,Beef kebabs with hummus
-,,8,Salmon with brown rice
-,,9,Turkey meatballs with spaghetti
-,,10,Lamb stew with iron-rich greens
+1,,,grilled salmon with spinach
+2,,,boiled eggs with brown rice
+3,,,chicken soup with carrots
+4,,,turkey sandwich on whole grain bread
+5,,,beef stew with sweet potatoes
+6,,,grilled chicken with quinoa and kale
+7,,,baked fish with lentils
+8,,,omelet with mushrooms and whole wheat toast
+9,,,lamb curry with basmati rice
+10,,,tuna steak with steamed broccoli
+,1,,boiled egg with fruit
+,2,,yogurt with chicken slices
+,3,,shrimp salad with olive oil dressing
+,4,,grilled chicken wrap
+,5,,sardine sandwich
+,6,,egg sandwich on whole grain bread
+,7,,fish tacos with salsa
+,8,,chicken biryani (light)
+,9,,beef stir fry with veggies
+,10,,mutton soup with rice
+,,1,chicken broth with ginger
+,,2,scrambled eggs with avocado
+,,3,fish curry with rice
+,,4,tuna salad with walnuts
+,,5,grilled chicken with roasted vegetables
+,,6,chicken liver with spinach
+,,7,beef kebabs with hummus
+,,8,salmon with brown rice
+,,9,turkey meatballs with spaghetti
+,,10,lamb stew with iron-rich greens
