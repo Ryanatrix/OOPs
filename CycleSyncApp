@@ -117,8 +117,8 @@ class DietPlan extends AbstractDietPlan implements DietRecommendation {
 }
 
 public class CycleSyncApp extends JFrame implements ActionListener {
-    private JTextField nameField, dateField, cycleField, painField, hungerField, exhaustionField;
-    private JComboBox<String> dietChoice;
+    private JTextField nameField, painField, hungerField, exhaustionField;
+    private JComboBox<String> yearDropdown, monthDropdown, dayDropdown, cycleLengthDropdown, dietChoice;
     private JTextArea resultArea;
     private JButton submitButton, clearButton;
     private DietPlan dietPlan;
@@ -137,8 +137,8 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         nameField = createTextField(inputPanel, "Name:");
-        dateField = createTextField(inputPanel, "Last Period Start Date (YYYY-MM-DD):");
-        cycleField = createTextField(inputPanel, "Cycle Length (days):");
+        createDateDropdowns(inputPanel, "Last Period Start Date:");
+        cycleLengthDropdown = createCycleLengthDropdown(inputPanel, "Cycle Length (days):");
         dietChoice = createComboBox(inputPanel, "Diet Preference:", new String[]{"Vegetarian", "Non-Vegetarian"});
         painField = createTextField(inputPanel, "Pain Level (1-10):");
         hungerField = createTextField(inputPanel, "Hunger Level (1-10):");
@@ -178,6 +178,42 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         return textField;
     }
 
+    private void createDateDropdowns(JPanel panel, String label) {
+        panel.add(new JLabel(label));
+        JPanel datePanel = new JPanel();
+        datePanel.setLayout(new FlowLayout());
+
+        yearDropdown = new JComboBox<>();
+        for (int year = LocalDate.now().getYear() - 10; year <= LocalDate.now().getYear(); year++) {
+            yearDropdown.addItem(String.valueOf(year));
+        }
+
+        monthDropdown = new JComboBox<>();
+        for (int month = 1; month <= 12; month++) {
+            monthDropdown.addItem(String.format("%02d", month));
+        }
+
+        dayDropdown = new JComboBox<>();
+        for (int day = 1; day <= 31; day++) {
+            dayDropdown.addItem(String.format("%02d", day));
+        }
+
+        datePanel.add(yearDropdown);
+        datePanel.add(monthDropdown);
+        datePanel.add(dayDropdown);
+        panel.add(datePanel);
+    }
+
+    private JComboBox<String> createCycleLengthDropdown(JPanel panel, String label) {
+        panel.add(new JLabel(label));
+        JComboBox<String> comboBox = new JComboBox<>();
+        for (int i = 1; i <= 28; i++) {
+            comboBox.addItem(String.valueOf(i));
+        }
+        panel.add(comboBox);
+        return comboBox;
+    }
+
     private JComboBox<String> createComboBox(JPanel panel, String label, String[] options) {
         panel.add(new JLabel(label));
         JComboBox<String> comboBox = new JComboBox<>(options);
@@ -215,14 +251,16 @@ public class CycleSyncApp extends JFrame implements ActionListener {
     }
 
     private String getRecommendations() {
-        LocalDate lastPeriod = LocalDate.parse(dateField.getText());
-        int cycleLength = Integer.parseInt(cycleField.getText());
+        int year = Integer.parseInt((String) yearDropdown.getSelectedItem());
+        int month = Integer.parseInt((String) monthDropdown.getSelectedItem());
+        int day = Integer.parseInt((String) dayDropdown.getSelectedItem());
+        LocalDate lastPeriod = LocalDate.of(year, month, day);
+
+        int cycleLength = Integer.parseInt((String) cycleLengthDropdown.getSelectedItem());
         Set<String> selectedAllergies = getSelectedCheckboxes(allergyCheckboxes);
         int painLevel = Integer.parseInt(painField.getText());
         int hungerLevel = Integer.parseInt(hungerField.getText());
         int exhaustionLevel = Integer.parseInt(exhaustionField.getText());
-
-        // Removed unused variable 'selectedSymptoms'
         Set<String> selectedDislikes = getSelectedCheckboxes(dislikeCheckboxes);
 
         int cycleDay = (int) ChronoUnit.DAYS.between(lastPeriod, LocalDate.now()) % cycleLength + 1;
@@ -242,8 +280,10 @@ public class CycleSyncApp extends JFrame implements ActionListener {
 
     private void clearFields() {
         nameField.setText("");
-        dateField.setText("");
-        cycleField.setText("");
+        yearDropdown.setSelectedIndex(0);
+        monthDropdown.setSelectedIndex(0);
+        dayDropdown.setSelectedIndex(0);
+        cycleLengthDropdown.setSelectedIndex(0);
         painField.setText("");
         hungerField.setText("");
         exhaustionField.setText("");
