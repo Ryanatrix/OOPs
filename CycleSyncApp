@@ -184,7 +184,7 @@ public class CycleSyncApp extends JFrame implements ActionListener {
         datePanel.setLayout(new FlowLayout());
 
         yearDropdown = new JComboBox<>();
-        for (int year = LocalDate.now().getYear() - 10; year <= LocalDate.now().getYear(); year++) {
+        for (int year = LocalDate.now().getYear() ; year <= LocalDate.now().getYear(); year++) {
             yearDropdown.addItem(String.valueOf(year));
         }
 
