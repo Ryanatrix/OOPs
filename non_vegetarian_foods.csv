@@ -1,31 +1,31 @@
 PainLevel,HungerLevel,ExhaustionLevel,Food
-1,,,grilled salmon with spinach
-2,,,boiled eggs with brown rice
-3,,,chicken soup with carrots
-4,,,turkey sandwich on whole grain bread
-5,,,beef stew with sweet potatoes
-6,,,grilled chicken with quinoa and kale
-7,,,baked fish with lentils
-8,,,omelet with mushrooms and whole wheat toast
-9,,,lamb curry with basmati rice
-10,,,tuna steak with steamed broccoli
-,1,,boiled egg with fruit
-,2,,yogurt with chicken slices
-,3,,shrimp salad with olive oil dressing
-,4,,grilled chicken wrap
-,5,,sardine sandwich
-,6,,egg sandwich on whole grain bread
-,7,,fish tacos with salsa
-,8,,chicken biryani (light)
-,9,,beef stir fry with veggies
-,10,,mutton soup with rice
-,,1,chicken broth with ginger
-,,2,scrambled eggs with avocado
-,,3,fish curry with rice
-,,4,tuna salad with walnuts
-,,5,grilled chicken with roasted vegetables
-,,6,chicken liver with spinach
-,,7,beef kebabs with hummus
-,,8,salmon with brown rice
-,,9,turkey meatballs with spaghetti
-,,10,lamb stew with iron-rich greens
+1,0,0,grilled salmon with spinach
+2,0,0,boiled eggs with brown rice
+3,0,0,chicken soup with carrots
+4,0,0,turkey sandwich on whole grain bread
+5,0,0,beef stew with sweet potatoes
+6,0,0,grilled chicken with quinoa and kale
+7,0,0,baked fish with lentils
+8,0,0,omelet with mushrooms and whole wheat toast
+9,0,0,lamb curry with basmati rice
+10,0,0,tuna steak with steamed broccoli
+0,1,0,boiled egg with fruit
+0,2,0,yogurt with chicken slices
+0,3,0,shrimp salad with olive oil dressing
+0,4,0,grilled chicken wrap
+0,5,0,sardine sandwich
+0,6,0,egg sandwich on whole grain bread
+0,7,0,fish tacos with salsa
+0,8,0,chicken biryani (light)
+0,9,0,beef stir fry with veggies
+0,10,0,mutton soup with rice
+0,0,1,chicken broth with ginger
+0,0,2,scrambled eggs with avocado
+0,0,3,fish curry with rice
+0,0,4,tuna salad with walnuts
+0,0,5,grilled chicken with roasted vegetables
+0,0,6,chicken liver with spinach
+0,0,7,beef kebabs with hummus
+0,0,8,salmon with brown rice
+0,0,9,turkey meatballs with spaghetti
+0,0,10,lamb stew with iron-rich greens
