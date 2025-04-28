@@ -1,31 +1,31 @@
 PainLevel,HungerLevel,ExhaustionLevel,Food
-1,,,masoor dal with rice and sautéed spinach
-2,,,palak paneer with multigrain roti
-3,,,vegetable soup with whole grain toast
-4,,,tofu stir fry with brown rice
-5,,,rajma chawal with cucumber salad
-6,,,chickpea curry with millets
-7,,,quinoa pulao with mixed vegetables
-8,,,methi thepla with curd
-9,,,khichdi with ghee and steamed carrots
-10,,,stuffed paratha with boiled sweet potatoes
-,1,,banana with peanut butter
-,2,,oats porridge with almonds
-,3,,fruit chaat with hung curd
-,4,,vegetable upma with cashews
-,5,,besan chilla with tomato chutney
-,6,,sprouted moong salad
-,7,,makhana roasted with spices
-,8,,paneer sandwich on whole wheat bread
-,9,,vegetable poha with peanuts
-,10,,ragi malt with jaggery
-,,1,lemon water with soaked almonds
-,,2,smoothie with spinach, banana, and flaxseed
-,,3,moong dal soup
-,,4,besan halwa with raisins
-,,5,vegetable stew with whole wheat bread
-,,6,tofu curry with steamed rice
-,,7,boiled corn with lime and masala
-,,8,barley khichdi with ghee
-,,9,bajra roti with brinjal curry
-,,10,stuffed capsicum with paneer and rice
+1,0,0,masoor dal with rice and sautéed spinach
+2,0,0,palak paneer with multigrain roti
+3,0,0,vegetable soup with whole grain toast
+4,0,0,tofu stir fry with brown rice
+5,0,0,rajma chawal with cucumber salad
+6,0,0,chickpea curry with millets
+7,0,0,quinoa pulao with mixed vegetables
+8,0,0,methi thepla with curd
+9,0,0,khichdi with ghee and steamed carrots
+10,0,0,stuffed paratha with boiled sweet potatoes
+0,1,0,banana with peanut butter
+0,2,0,oats porridge with almonds
+0,3,0,fruit chaat with hung curd
+0,4,0,vegetable upma with cashews
+0,5,0,besan chilla with tomato chutney
+0,6,0,sprouted moong salad
+0,7,0,makhana roasted with spices
+0,8,0,paneer sandwich on whole wheat bread
+0,9,0,vegetable poha with peanuts
+0,10,0,ragi malt with jaggery
+0,0,1,lemon water with soaked almonds
+0,0,2,smoothie with spinach, banana, and flaxseed
+0,0,3,moong dal soup
+0,0,4,besan halwa with raisins
+0,0,5,vegetable stew with whole wheat bread
+0,0,6,tofu curry with steamed rice
+0,0,7,boiled corn with lime and masala
+0,0,8,barley khichdi with ghee
+0,0,9,bajra roti with brinjal curry
+0,0,10,stuffed capsicum with paneer and rice
