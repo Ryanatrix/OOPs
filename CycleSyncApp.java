@@ -94,16 +94,16 @@ class DietPlan extends AbstractDietPlan implements DietRecommendation {
                     continue; // Skip lines with insufficient data
                 }
 
-                boolean addFood = true;
+                boolean addFood = false;
 
-                if (!values[0].isEmpty() && painLevel != Integer.parseInt(values[0])) {
-                    addFood = false;
+                if (painLevel == Integer.parseInt(values[0]) && painLevel != 0) {
+                    addFood = true;
                 }
-                if (!values[1].isEmpty() && hungerLevel != Integer.parseInt(values[1])) {
-                    addFood = false;
+                if (hungerLevel == Integer.parseInt(values[1]) && hungerLevel != 0) {
+                    addFood = true;
                 }
-                if (!values[2].isEmpty() && exhaustionLevel != Integer.parseInt(values[2])) {
-                    addFood = false;
+               if (exhaustionLevel == Integer.parseInt(values[2]) && exhaustionLevel != 0) {
+                    addFood = true;
                 }
 
                 if (addFood) {
